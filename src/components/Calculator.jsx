@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Button from './Button';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Calculator = () => {
   const [currentValue, setCurrentValue] = useState('0');
@@ -61,7 +60,7 @@ const Calculator = () => {
         {parseFloat(currentValue).toLocaleString()}
       </Text>
       <View style={styles.row}>
-        <Button text={<MaterialCommunityIcons name="delete-outline" size={28} />} theme="secondary" onPress={() => handleTap('clear')} />
+        <Button text="C" theme="secondary" onPress={() => handleTap('clear')} />
         <Button text="+/-" theme="secondary" onPress={() => handleTap('posneg')} />
         <Button text="%" theme="secondary" onPress={() => handleTap('percentage')} />
         <Button text="/" theme="accent" onPress={() => handleTap('operator', '/')} />
@@ -97,7 +96,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end',
-    backgroundColor: '#202020',
+    backgroundColor: '#1E1E1E',
+    padding: 10,
   },
   value: {
     color: '#fff',
